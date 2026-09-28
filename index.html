@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Code Escape - Juego académico basado en ISO/IEC 25010">
+    <title>Code Escape - ISO 25010</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <main class="game">
+
+        <!-- PANTALLA DE INICIO -->
+        <section id="start" class="center">
+
+            <div class="emoji">💻</div>
+
+            <h1>CODE ESCAPE</h1>
+
+            <p class="subtitle">
+                Escapa resolviendo desafíos de programación.
+            </p>
+
+            <p class="description">
+                Responde 5 preguntas. Cada respuesta correcta
+                suma puntos. ¡Demuestra tus conocimientos!
+            </p>
+
+            <button type="button" class="main" id="startBtn">
+                COMENZAR
+            </button>
+
+            <p class="small">
+                Proyecto académico · ISO/IEC 25010 · Eficiencia del desempeño
+            </p>
+
+        </section>
+
+
+        <!-- PANTALLA DEL JUEGO -->
+        <section id="game" class="hidden">
+
+            <h1>CODE ESCAPE</h1>
+
+            <div class="top">
+
+                <span class="badge" id="level">
+                    Nivel 1/5
+                </span>
+
+                <span class="badge">
+                    ⭐ <span id="score">0</span> pts
+                </span>
+
+                <span class="badge">
+                    ⏱️ <span id="time">30</span>s
+                </span>
+
+            </div>
+
+
+            <!-- BARRA DE PROGRESO -->
+            <div class="bar">
+                <div class="fill" id="fill"></div>
+            </div>
+
+
+            <!-- PREGUNTA -->
+            <div class="question" id="question"></div>
+
+
+            <!-- RESPUESTAS -->
+            <div class="answers" id="answers"></div>
+
+
+            <!-- MENSAJE -->
+            <div
+                class="feedback"
+                id="feedback"
+                aria-live="polite">
+            </div>
+
+
+            <!-- SIGUIENTE -->
+            <button
+                type="button"
+                class="main hidden"
+                id="nextBtn">
+                SIGUIENTE →
+            </button>
+
+        </section>
+
+
+        <!-- PANTALLA FINAL -->
+        <section id="end" class="center hidden">
+
+            <div class="emoji">🏆</div>
+
+            <h1>¡ESCAPASTE!</h1>
+
+            <p>Tu puntuación:</p>
+
+            <div class="score" id="finalScore">
+                0
+            </div>
+
+            <p id="finalText"></p>
+
+            <button
+                type="button"
+                class="main"
+                id="restartBtn">
+                JUGAR DE NUEVO
+            </button>
+
+            <p class="small">
+                El juego funciona completamente en el navegador
+                sin necesidad de recargar la página.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="./script.js"></script>
+
+</body>
+</html>
+
