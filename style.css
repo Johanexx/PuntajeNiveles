@@ -1,0 +1,355 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #080b16;
+    color: #ffffff;
+}
+
+
+/* ================================
+   CONTENEDOR DEL JUEGO
+================================ */
+
+.game {
+    width: min(760px, 100%);
+
+    padding: 28px;
+
+    background: #11172a;
+
+    border: 1px solid #293252;
+    border-radius: 24px;
+
+    box-shadow: 0 20px 60px #0008;
+}
+
+
+/* ================================
+   TITULOS
+================================ */
+
+h1 {
+    margin: 0;
+
+    font-size: 42px;
+
+    color: #67e8f9;
+
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    margin-top: 8px;
+
+    color: #aab4d0;
+
+    font-size: 18px;
+}
+
+.description {
+    color: #d5dbeb;
+
+    line-height: 1.6;
+
+    margin: 20px auto;
+
+    max-width: 600px;
+}
+
+
+/* ================================
+   PANTALLA DE INICIO / FINAL
+================================ */
+
+.center {
+    text-align: center;
+
+    padding: 30px 10px;
+}
+
+.emoji {
+    font-size: 60px;
+
+    margin-bottom: 10px;
+}
+
+.small {
+    margin-top: 18px;
+
+    color: #9ca8c7;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* ================================
+   INFORMACIÓN DEL JUEGO
+================================ */
+
+.top {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin: 24px 0 12px;
+}
+
+.badge {
+    padding: 8px 13px;
+
+    background: #1b2542;
+
+    border-radius: 999px;
+
+    color: #dbeafe;
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   BARRA DE PROGRESO
+================================ */
+
+.bar {
+    width: 100%;
+
+    height: 10px;
+
+    margin-bottom: 24px;
+
+    background: #252e49;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.fill {
+    width: 0%;
+
+    height: 100%;
+
+    background: #67e8f9;
+
+    border-radius: 20px;
+
+    transition: width 0.3s ease;
+}
+
+
+/* ================================
+   PREGUNTA
+================================ */
+
+.question {
+    margin: 20px 0;
+
+    font-size: 25px;
+
+    line-height: 1.4;
+
+    color: #ffffff;
+}
+
+
+/* ================================
+   RESPUESTAS
+================================ */
+
+.answers {
+    display: grid;
+
+    gap: 12px;
+}
+
+.answer {
+    width: 100%;
+
+    padding: 16px;
+
+    border: 1px solid #34405f;
+
+    border-radius: 14px;
+
+    background: #18213a;
+
+    color: #ffffff;
+
+    text-align: left;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.answer:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    border-color: #67e8f9;
+
+    background: #202b49;
+}
+
+.answer:disabled {
+    cursor: default;
+}
+
+.answer.correct {
+    background: #123c32;
+
+    border-color: #34d399;
+}
+
+.answer.wrong {
+    background: #4a1f2a;
+
+    border-color: #fb7185;
+}
+
+
+/* ================================
+   MENSAJES DE RESPUESTA
+================================ */
+
+.feedback {
+    min-height: 30px;
+
+    margin: 18px 0;
+
+    font-weight: bold;
+
+    line-height: 1.4;
+}
+
+.feedback.good {
+    color: #34d399;
+}
+
+.feedback.bad {
+    color: #fb7185;
+}
+
+
+/* ================================
+   BOTONES
+================================ */
+
+button.main {
+    padding: 14px 22px;
+
+    border: 0;
+
+    border-radius: 13px;
+
+    background: #67e8f9;
+
+    color: #061018;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+button.main:hover {
+    transform: scale(1.03);
+
+    box-shadow: 0 0 20px #67e8f955;
+}
+
+button.main:active {
+    transform: scale(0.98);
+}
+
+
+/* ================================
+   PUNTUACIÓN FINAL
+================================ */
+
+.score {
+    margin: 10px 0;
+
+    font-size: 50px;
+
+    font-weight: bold;
+
+    color: #67e8f9;
+}
+
+
+/* ================================
+   OCULTAR ELEMENTOS
+================================ */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .game {
+        padding: 20px;
+
+        border-radius: 18px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .question {
+        font-size: 21px;
+    }
+
+    .answer {
+        padding: 14px;
+
+        font-size: 16px;
+    }
+
+    .badge {
+        font-size: 13px;
+    }
+
+}
+
